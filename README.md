@@ -27,9 +27,22 @@ kubectl apply -f <fileName>
 kubectl scale --replicas=6 -f replicaset-definition.yaml
 kubectl scale --replicas=6 replicaset my-app-replicaset
                            ||<type>||    ||<name>||
-
+kubectl edit replicaset <name>
 
 ```
+
+### Deployments
+
+1. Provides the capability to upgrade the underlying instances seamlessly using rolling updates.
+
+```
+ kubectl rollout status deployment.apps/myapp-deployment
+ kubectl create -f deployment.yml --recard
+ kubectl edit deployment myapp-deployment --record
+ kubectl rollout undo deployment myapp-deployment
+
+```
+
 
 
 
